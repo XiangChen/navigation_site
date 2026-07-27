@@ -1,0 +1,339 @@
+<!DOCTYPE html><html class="dark" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AI NEXUS - Google翻译 Details</title><meta content="诞生于2006年，Google翻译早已不是最初的模样。最初依靠统计学方法进行翻译，虽然能解决基本需求，但面对复杂长句时总显得力不从心。转折点发生在2016年，Google翻译全面拥抱由人工智能（AI）驱动的神经网络机器翻译（NMT）技术。这一升级堪称脱胎换骨，让翻译不再是生硬的词语替换，而是通过理解整句话的上下文，产出更精准、更流畅自然的译文。截至2015年，其日处理词汇量就已突破1000亿大关，如今更是覆盖了全球99%的网民所使用的语言。这不仅仅是一个工具，更像一个由AI驱动、不断进化的全球语言沟通桥梁。" name="description"><meta content="Midjourney, AI翻译,图片翻译,实时对话,机器翻译,翻译工具,语言学习" name="keywords">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #051424;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2b3c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #273647;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#b9cacb",
+                        "inverse-on-surface": "#233143",
+                        "on-tertiary": "#2f303a",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "outline-variant": "#3b494b",
+                        "surface": "#051424",
+                        "primary-container": "#00f0ff",
+                        "surface-container": "#122131",
+                        "on-tertiary-fixed": "#1a1b24",
+                        "background": "#051424",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#002022",
+                        "tertiary-container": "#d9d8e6",
+                        "primary-fixed": "#7df4ff",
+                        "surface-container-lowest": "#010f1f",
+                        "tertiary": "#f7f4ff",
+                        "inverse-primary": "#006970",
+                        "secondary-fixed-dim": "#ebb2ff",
+                        "on-background": "#d4e4fa",
+                        "tertiary-fixed-dim": "#c6c5d2",
+                        "primary": "#dbfcff",
+                        "secondary-fixed": "#f8d8ff",
+                        "on-primary-container": "#006970",
+                        "secondary": "#ebb2ff",
+                        "outline": "#849495",
+                        "on-tertiary-fixed-variant": "#454651",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#5e5e69",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#00dbe9",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-primary": "#00363a",
+                        "on-surface": "#d4e4fa",
+                        "surface-container-high": "#1c2b3c",
+                        "surface-variant": "#273647",
+                        "on-secondary-container": "#fff6fc",
+                        "on-primary-fixed-variant": "#004f54",
+                        "surface-container-low": "#0d1c2d",
+                        "inverse-surface": "#d4e4fa",
+                        "secondary-container": "#b600f8",
+                        "on-secondary-fixed": "#320047",
+                        "surface-dim": "#051424",
+                        "tertiary-fixed": "#e3e1ef",
+                        "on-secondary": "#520072",
+                        "on-error": "#690005",
+                        "surface-bright": "#2c3a4c",
+                        "surface-container-highest": "#273647"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-desktop": "48px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Geist"],
+                        "mono-code": ["Geist"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "mono-code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-white/10 shadow-sm flex items-center px-gutter h-16"><div class="flex items-center justify-between w-full max-w-[1600px] mx-auto px-gutter"><div class="flex items-center"><span class="font-headline-lg text-headline-lg font-bold text-primary-fixed-dim tracking-tighter uppercase">AI NEXUS</span></div><div class="flex-1 flex justify-center px-gutter"></div><div class="flex items-center gap-6"><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">BLOG</a><button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-sm text-label-sm font-bold uppercase tracking-wide">SUBMIT TOOL</button><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">CONTACT US</a></div></div></header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto pt-24 px-4 md:px-gutter lg:px-margin-desktop pb-20">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">AI翻译工具</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">Google翻译</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Primary Details -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<!-- Tool Header -->
+<div class="glass-card rounded-xl p-8 flex flex-col items-center gap-8 relative overflow-hidden text-center">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="relative z-10 w-full flex flex-col items-center gap-8">
+<div class="flex flex-col items-center gap-6">
+<div class="w-24 h-24 shrink-0 bg-surface-container-high rounded-2xl flex items-center justify-center p-2 border border-white/10 shadow-2xl">
+<img alt="Midjourney Logo" class="w-full h-full rounded-xl" src="https://image.uisdc.com/wp-content/uploads/2025/09/nav-logo-translategoogle.webp">
+</div>
+<div class="flex flex-col items-center gap-3">
+<h1 class="font-headline-xl text-headline-xl text-primary">Midjourney</h1>
+<span class="bg-amber-500/20 text-amber-400 px-4 py-1 rounded-full text-label-sm font-label-sm border border-white/10 w-fit">A级</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-6 mt-4 w-full max-w-2xl"><div class="flex flex-col md:flex-row items-stretch gap-4 w-full">
+<a class="flex-1 inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-title-md text-title-md hover:scale-105 active:scale-95 transition-transform" href="#"><span class="material-symbols-outlined">launch</span> Official Website</a>
+<div class="flex-[1.5] p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-between text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">sell</span>
+<div>
+<div class="text-primary font-bold text-body-md">优惠信息</div>
+<div class="text-on-surface-variant text-label-sm">新用户首月订阅享 20% 折扣</div>
+</div>
+</div>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-full text-label-sm font-bold shrink-0">立即领取</button>
+</div>
+</div></div>
+<div class="space-y-6 text-left w-full">
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed w-full">诞生于2006年，Google翻译早已不是最初的模样。最初依靠统计学方法进行翻译，虽然能解决基本需求，但面对复杂长句时总显得力不从心。转折点发生在2016年，Google翻译全面拥抱由人工智能（AI）驱动的神经网络机器翻译（NMT）技术。这一升级堪称脱胎换骨，让翻译不再是生硬的词语替换，而是通过理解整句话的上下文，产出更精准、更流畅自然的译文。截至2015年，其日处理词汇量就已突破1000亿大关，如今更是覆盖了全球99%的网民所使用的语言。这不仅仅是一个工具，更像一个由AI驱动、不断进化的全球语言沟通桥梁。</p>
+<div class="grid grid-cols-1 gap-8 pt-4">
+<section class="w-full">
+<h3 class="text-primary font-title-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">groups</span> 需求人群定位</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed">跨国旅行者：在国外点餐、问路、看懂指示牌，解决语言不通的燃眉之急。
+学生与研究者：阅读外语文献、学习新语言，快速获取一手资料。
+商务办公人士：处理跨国邮件、进行初步的网站本地化、与国际客户进行即时沟通。
+内容创作者与站长：将网站或内容一键翻译成多种语言，吸引全球范围的访客。
+语言文化爱好者：探索不同语言的魅力，了解当地俚语和多样化的表达方式</p>
+</section>
+<section class="w-full">
+<h3 class="text-primary font-title-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">features</span> 主要功能</h3>
+<ul class="text-on-surface-variant text-body-md list-disc list-inside space-y-2">
+<li class="">文本转图像 (Text-to-Image)：通过自然语言描述生成高精度图像。</li>
+<li class="">图像变体 (Variations)：基于现有图像生成风格相近的多种版本。</li>
+<li class="">局部重绘 (Vary Region)：对生成图像的特定区域进行修改或替换。</li>
+<li class="">缩放与平移 (Zoom &amp; Pan)：无限扩展画布边界，探索更多构图可能。</li>
+<li class="">风格参考 (Style Reference)：保持不同生成作品间视觉风格的高度一致性。</li>
+</ul>
+</section>
+<section class="w-full">
+<h3 class="text-primary font-title-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">star</span> 产品特色</h3>
+<ul class="text-on-surface-variant text-body-md list-disc list-inside space-y-2">
+<li class="">超广语言覆盖：支持的语言数量极其庞大，是目前最全面的免费翻译工具之一，让小语种沟通也不再是难题。</li>
+<li class="">AI赋能的情境感知：得益于AI模型，Google翻译能理解词语在不同情境下的确切含义，例如能区分作为乐器的“贝斯(Bass)”和作为鱼类的“鲈鱼(Bass)”，提供更贴切的翻译选项。</li>
+<li class="">全场景无缝应用：无论是通过键盘输入文字、麦克风进行语音对话，还是用摄像头识别图像，Google翻译都能在不同场景间灵活切换，满足各种即时翻译需求。</li>
+<li class="">多平台同步体验：无论是在电脑网页端、手机App还是集成在其他应用中，都能获得便捷一致的翻译体验。</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Section (Part of wide layout now) -->
+
+</div>
+<!-- Right Column: Meta & Recommendations -->
+<div class="lg:col-span-4 space-y-stack-lg">
+<!-- Tool Specs -->
+<div class="glass-card rounded-xl p-6 space-y-6">
+<div>
+<h3 class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest mb-4">Support Platforms</h3>
+<div class="flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-md bg-surface-container flex items-center gap-2 border border-white/5">
+<span class="material-symbols-outlined text-sm">public</span>
+<span class="text-body-md font-body-md">Web App</span>
+</div>
+<div class="px-3 py-1.5 rounded-md bg-surface-container flex items-center gap-2 border border-white/5">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span class="text-body-md font-body-md">Discord</span>
+</div>
+<div class="px-3 py-1.5 rounded-md bg-surface-container flex items-center gap-2 border border-white/5">
+<span class="material-symbols-outlined text-sm">smartphone</span>
+<span class="text-body-md font-body-md">iOS &amp; Android</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<h3 class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest mb-4">Pricing Model</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-on-surface font-body-md">Free Trial</span>
+<span class="text-on-surface-variant">Limited Relaxed</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface font-body-md">Basic Plan</span>
+<span class="text-primary-fixed-dim font-bold">$10 / mo</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface font-body-md">Pro Plan</span>
+<span class="text-primary-fixed-dim font-bold">$60 / mo</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<h3 class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest mb-4">Tags</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-white/5 text-on-surface-variant text-label-sm">AI翻译</span>
+<span class="px-2 py-1 rounded bg-white/5 text-on-surface-variant text-label-sm">图片翻译</span>
+<span class="px-2 py-1 rounded bg-white/5 text-on-surface-variant text-label-sm">实时对话</span>
+<span class="px-2 py-1 rounded bg-white/5 text-on-surface-variant text-label-sm">机器翻译</span>
+</div>
+</div>
+</div>
+<!-- Related Tools -->
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Related Tools</h2>
+<div class="space-y-3">
+<a class="block glass-card p-4 rounded-xl hover:bg-white/10 transition-all group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden border border-white/5">
+<img alt="DALL-E 3" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDda5dQxVZxW2SZ-XBwG2lX-EJaJQQoMsHcug4OFYBIQSX3KKJ5dnjHpCn8KJQWckek9gJOB35SIxB_B3DJT641T5yC7-Y04QTkokVWUlIXeqS7mtb1Rq607kn2YIqZ4njEDdX79M-cAnb17YytZKzGHgIEWPXvLLVU5gkc_Z__oWwfCQu_4OpGg3R4KSOgLhldH31cOx1atN8chSBSyIoMjhmiVXhRtFEvFMBIVY4W1wm_dUTzw2IWyluR5yEmHUMMeTcpXUUw7QE">
+</div>
+<div class="flex-1">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">DALL-E 3</div>
+<div class="text-label-sm text-on-surface-variant">By OpenAI • Powerful coherence</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+</a>
+<a class="block glass-card p-4 rounded-xl hover:bg-white/10 transition-all group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden border border-white/5">
+<img alt="Stable Diffusion" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-BCeXlAUdLKxxdLVC-vle_4cTZEr-igGgwbCey9u5VxuXLegmvboqFdqUMT7EwDvFsVprGke7aTQyYQjnokCnPAPPzsvo-pLO-N54UaNQzOfZhudI86a1I0hYnsgRlniJJimq3Ss62RINFQ9DT1EJEPzB6wAB_jn-sEyn5LyU5UBuzs4H8k5dQH5XpqCCcm7n5PpSXxulEAGty3GqIoj9m9JK5a8z0HrIkzfl2qkfmT88y07L3MXuBwjXmkXkPk_COlNvNjhqCZY">
+</div>
+<div class="flex-1">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">Stable Diffusion</div>
+<div class="text-label-sm text-on-surface-variant">Open Source • Highly customizable</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+</a>
+<a class="block glass-card p-4 rounded-xl hover:bg-white/10 transition-all group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden border border-white/5">
+<img alt="Leonardo AI" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxL7ng8tlqAQS0ApDjkXTuez68VaGVZE1kkd67gy_n_1-i_kQrRLWngR_418TugWFfCAmgaeSbYr4Jc6C2e3qA0bxEegYf9S4oJto0-d6VE1joIp26G_mCnAj0Cq9Lz6-d7poHD89d4RKQo2yNDZvDOXeU0A0REknE7DJk2NZbq_c4-7MqFnufwRY3nGk1qvv1_9EuzIxSwoojg_QU9mDBCiFM3HpGJPi4r5Kno5RTfsME9z7opzQNgrtfXvExhdeu_NqgMWfxgwA">
+</div>
+<div class="flex-1">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">Leonardo AI</div>
+<div class="text-label-sm text-on-surface-variant">Full Creative Suite • Web app</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg border-t border-white/10 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center p-gutter gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-title-md text-title-md font-bold text-primary">AI NEXUS</span>
+<p class="text-on-surface-variant font-body-md text-body-md opacity-70">© 2024 AI NEXUS Directory. The definitive gateway to ML.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Advertise</a>
+</div>
+</footer>
+<!-- Light Micro-interaction Script -->
+<script>
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                document.querySelector('input').focus();
+            }
+        });
+
+        // Atmospheric glowing mouse effect
+        const main = document.querySelector('main');
+        main.addEventListener('mousemove', (e) => {
+            const rect = main.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body></html>
