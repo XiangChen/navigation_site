@@ -1,0 +1,1466 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AI API - Premium Solutions | AI NEXUS</title><meta content="Explore premium AI API solutions for developers. Discover top-rated LLM infrastructure, high-performance inference, and creative AI tools." name="description">
+<meta content="AI API, LLM infrastructure, machine learning API, AI development, AI aggregation API" name="keywords">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#ebb2ff",
+                    "on-secondary": "#520072",
+                    "on-primary-container": "#006970",
+                    "on-surface-variant": "#b9cacb",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "tertiary-fixed-dim": "#c6c5d2",
+                    "on-primary-fixed": "#002022",
+                    "on-tertiary-fixed": "#1a1b24",
+                    "on-secondary-fixed": "#320047",
+                    "surface-tint": "#00dbe9",
+                    "primary-container": "#00f0ff",
+                    "error": "#ffb4ab",
+                    "tertiary": "#f7f4ff",
+                    "on-tertiary-container": "#5e5e69",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004f54",
+                    "outline": "#849495",
+                    "outline-variant": "#3b494b",
+                    "on-background": "#d4e4fa",
+                    "primary": "#dbfcff",
+                    "inverse-primary": "#006970",
+                    "secondary-fixed-dim": "#ebb2ff",
+                    "surface-container-lowest": "#010f1f",
+                    "surface-container-highest": "#273647",
+                    "surface-container-low": "#0d1c2d",
+                    "primary-fixed-dim": "#00dbe9",
+                    "on-tertiary": "#2f303a",
+                    "tertiary-container": "#d9d8e6",
+                    "on-tertiary-fixed-variant": "#454651",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#7df4ff",
+                    "on-error": "#690005",
+                    "surface": "#051424",
+                    "surface-container-high": "#1c2b3c",
+                    "secondary-fixed": "#f8d8ff",
+                    "on-surface": "#d4e4fa",
+                    "secondary-container": "#b600f8",
+                    "surface-variant": "#273647",
+                    "tertiary-fixed": "#e3e1ef",
+                    "surface-dim": "#051424",
+                    "inverse-surface": "#d4e4fa",
+                    "inverse-on-surface": "#233143",
+                    "background": "#051424",
+                    "surface-bright": "#2c3a4c",
+                    "on-secondary-container": "#fff6fc",
+                    "surface-container": "#122131",
+                    "on-primary": "#00363a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "margin-desktop": "48px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "title-md": ["Hanken Grotesk"],
+                    "mono-code": ["Geist"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Geist"],
+                    "headline-xl": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "mono-code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #051424; color: #d4e4fa; }
+        .glass-panel { backdrop-filter: blur(12px); }
+        .power-card { background: #161B22; border: 1px solid #FFFFFF08; transition: all 0.3s ease; }
+        .power-card:hover { transform: translateY(-4px); background: #1c2b3c; border-color: #00dbe940; box-shadow: 0 10px 30px -10px rgba(0, 219, 233, 0.15); }
+        .nav-active-indicator { border-left: 4px solid #00dbe9; background: rgba(0, 219, 233, 0.1); }
+        .shimmer { background: linear-gradient(90deg, #161B22 0%, #1E293B 50%, #161B22 100%); background-size: 200% 100%; animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-white/10 shadow-sm flex items-center px-gutter h-16"><div class="flex items-center justify-between w-full max-w-[1280px] mx-auto px-gutter"><div class="flex items-center"><span class="font-headline-lg text-headline-lg font-bold text-primary-fixed-dim tracking-tighter uppercase">AI NEXUS</span></div><div class="flex items-center gap-6"><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">BLOG</a><button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-sm text-label-sm font-bold uppercase tracking-wide">SUBMIT TOOL</button><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">CONTACT US</a></div></div></header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-gutter pb-stack-lg min-h-screen max-w-[1280px] mx-auto">
+<!-- Hero Section -->
+<header class="mb-stack-lg">
+<div class="flex items-center gap-3 mb-2 text-primary-fixed-dim">
+<span class="material-symbols-outlined">api</span>
+<span class="uppercase tracking-widest font-label-sm text-label-sm">Infrastructure</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-stack-sm">AI API</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">Premium API solutions for developers building the next generation of intelligent applications.</p>
+</header><nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-stack-lg text-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary-fixed-dim font-medium">AI API</span>
+</nav>
+<!-- Ranked Tool List (Bento Grid Inspired Layout) -->
+<h2 class="sr-only">Featured AI API Providers</h2><div class="grid grid-cols-1 gap-gutter">
+
+<!-- 聚合与路由平台 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">api</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">Aggregation & Routing</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">聚合与路由平台</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim font-headline-xl text-6xl italic select-none">01</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">OpenRouter</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+全球知名度最高、生态最成熟的开源/闭源模型统一 API 接入网关
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=OpenRouter+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">02</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<img alt="WaveSpeedAI" class="w-16 h-16 object-contain" src="images/nav-logo-WaveSpeedAI.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">WaveSpeedAI</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+主打极速、低延迟与无冷启动的文本、图像及视频等多模态 API 托管聚合
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=WaveSpeedAI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">03</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">iCreat AI</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+全球领先的全模态API聚合平台，极速和低延迟的API接入网关平台
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=iCreat+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">04</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<img alt="SiliconFlow (硅基流动)" class="w-16 h-16 object-contain" src="images/nav-logo-Flow.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">SiliconFlow (硅基流动)</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+国内/出海领先的 API 聚合服务，深度优化推理加速，支持大量开源与视觉模型
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=SiliconFlow+(硅基流动)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">05</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Eden AI</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+欧洲多模态 API 聚合商，整合 500+ 模型并提供强合规与数据安全保障
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Eden+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 92px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">06</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Atlas Cloud</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+生产级全模态 API 聚合平台，涵盖 DeepSeek、FLUX、Veo、Kling 等模型
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Atlas+Cloud+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 97px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">07</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Requesty</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+动态 LLM 路由平台，主打自动故障转移（Failover）与多 Provider 负载均衡
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Requesty+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 102px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">08</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">NanoGPT</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+按使用量（Token）实时计费的 API 集合，无需月费订阅，开箱即用
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=NanoGPT+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 107px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">09</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">AI/ML API</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+整合 200+ 模型接口的轻量级 API 平台，支持一键切换并具备强兼容性
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=AI/ML+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 112px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">10</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Kie.ai</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+点数/积分制的跨模态 AI API 接入服务，方便灵活计费
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Kie.ai+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 117px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">11</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">api</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Chutes</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">聚合与路由平台</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于开源社区模型的 Serverless API 托管与快速分发路由
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Chutes+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+<!-- 专项多模态与视觉 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">palette</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">Multimodal & Vision</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">专项多模态与视觉</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">12</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Fal.ai</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+极速图像、视频与 3D 生成 API 平台，实时推理性能极强
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Fal.ai+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">13</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="Replicate" class="w-16 h-16 object-contain" src="images/nav-logo-chumenwenwen.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Replicate</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+开源 AI 模型 API 化托管先驱，生态极其丰富，支持自定义镜像部署
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Replicate+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">14</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">GoAPI (MJ Proxy)</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+Midjourney 第三方代理及多模态视觉生成的 API 托管服务
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=GoAPI+(MJ+Proxy)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">15</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="Runway API" class="w-16 h-16 object-contain" src="images/nav-logo-Runway.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Runway API</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+商业级 AI 视频生成（Gen-2 / Gen-3）与处理官方 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Runway+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">16</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="Luma AI API" class="w-16 h-16 object-contain" src="images/nav-logo-Lumalabs.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Luma AI API</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+Dream Machine 视频生成与 3D 场景重建 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Luma+AI+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 92px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">17</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="Pika Labs API" class="w-16 h-16 object-contain" src="images/nav-logo-Pika.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Pika Labs API</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于动画与短视频运镜特效生成的 API 服务
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Pika+Labs+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 97px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">18</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="ElevenLabs API" class="w-16 h-16 object-contain" src="images/nav-logo-ElevenLabs.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">ElevenLabs API</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+全球领先的高逼真语音合成（TTS）、声音克隆及实时语音 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=ElevenLabs+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 102px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">19</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Deepgram API</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+极速语音识别（STT）与语音理解 API，延迟低且识别率高
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Deepgram+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 107px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">20</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Suno API (Proxy)</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+AI 音乐生成与编曲第三方 API 解决方案
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Suno+API+(Proxy)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 112px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">21</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center flex-shrink-0">
+<img alt="Udio API (Proxy)" class="w-16 h-16 object-contain" src="images/nav-logo-Udio.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">palette</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Udio API (Proxy)</h3>
+<span class="bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">专项多模态与视觉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+高品质音乐与音频创作 API 服务
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Udio+API+(Proxy)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+<!-- 高性能极速推理 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">bolt</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">High-Performance</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">高性能极速推理</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">22</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Groq</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+基于 LPU 专有芯片，提供极高速（数百 Token/s）的 LLM 推理 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Groq+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">23</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Cerebras</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+基于晶圆级芯片（WSE）的推理云，专攻超低延迟的大模型 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Cerebras+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">24</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Together AI</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+开源大模型托管、微调与 API 推理服务商，节点丰富且性价比高
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Together+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">25</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Fireworks.ai</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+基于 FireAttention 优化引擎，主打长文本、高并发与低延迟推理
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Fireworks.ai+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">26</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">SambaNova Systems</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+利用 SN40L 芯片提供超大参数模型（如 405B）极速推理的 API 服务
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=SambaNova+Systems+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 92px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">27</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<img alt="Anyscale (Ray)" class="w-16 h-16 object-contain" src="images/nav-logo-Scale.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Anyscale (Ray)</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+基于 Ray 开源生态构建的分布式大模型 API 托管与部署云
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Anyscale+(Ray)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 97px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">28</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">DeepInfra</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+极具性价比的开源 LLM 与 Embeddings 模型 Serverless API 服务商
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=DeepInfra+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 102px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">29</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Lepton AI</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+由业内专家打造、极简且高效的 Serverless AI API 部署与托管平台
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Lepton+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 107px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">30</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<img alt="Baseten" class="w-16 h-16 object-contain" src="images/nav-logo-Baseten.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Baseten</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于将开源模型与自定义 Workflow 转化为高可用生产级 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Baseten+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 112px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">31</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Novita AI</h3>
+<span class="bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">高性能极速推理</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+提供海量 GPU 算力驱动的 LLM 与 Stable Diffusion 极速 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Novita+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+<!-- 旗舰模型原厂 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">star</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">Flagship Models</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">旗舰模型原厂</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">32</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">OpenAI API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+行业标杆，提供 GPT-4o、o1/o3/GPT-5 系列、DALL-E 及 Whisper
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=OpenAI+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">33</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Anthropic API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+Claude 系列官方 API，在复杂推理、代码生成与长文本上表现出色
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Anthropic+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">34</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="Google Gemini API" class="w-16 h-16 object-contain" src="images/nav-logo-Gemini.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Google Gemini API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+拥有超长上下文（2M+）与原生多模态理解能力的官方 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Google+Gemini+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">35</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="Mistral AI API" class="w-16 h-16 object-contain" src="images/nav-logo-Mistral.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Mistral AI API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+欧洲顶尖 AI 厂商，提供高性价比的高性能开源与商业闭源模型 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Mistral+AI+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">36</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">xAI (Grok API)</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+马斯克旗下 xAI 官方 API，具备实时信息检索与强逻辑推理能力
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=xAI+(Grok+API)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 92px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">37</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="DeepSeek API" class="w-16 h-16 object-contain" src="images/nav-logo-Deepseek.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">DeepSeek API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+国内顶级推理与代码模型原厂 API，性价比与推理性能兼备
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=DeepSeek+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 97px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">38</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="Moonshot AI (Kimi)" class="w-16 h-16 object-contain" src="images/nav-logo-Kimi.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Moonshot AI (Kimi)</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+长文本理解与搜索增强能力突出的官方 API 服务
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Moonshot+AI+(Kimi)+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 102px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">39</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="Cohere API" class="w-16 h-16 object-contain" src="images/nav-logo-Cohere.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Cohere API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于 Enterprise RAG、搜索与 Embedding / Rerank 的 API 平台
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Enterprise</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Cohere+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 107px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">40</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="Stability AI API" class="w-16 h-16 object-contain" src="images/nav-logo-StabilityAI.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Stability AI API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+Stable Diffusion (SD3/FLUX 合作) 及 SVD 视频生成的官方 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Stability+AI+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 112px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">41</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+<img alt="MiniMax API" class="w-16 h-16 object-contain" src="images/nav-logo-MiniMax.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">MiniMax API</h3>
+<span class="bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">旗舰模型原厂</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+在语音合成、多模态与长文本交互上具备强竞争力的原厂 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Multimodal</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=MiniMax+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+<!-- 云巨头与企业级 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">cloud</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">Cloud & Enterprise</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">云巨头与企业级</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">42</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">cloud</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">AWS Bedrock</h3>
+<span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">云巨头与企业级</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+亚马逊全托管 AI 网关，一站式调用 Anthropic、Meta、Cohere 等
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=AWS+Bedrock+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">43</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">cloud</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Azure OpenAI Service</h3>
+<span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">云巨头与企业级</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+微软企业级 OpenAI API 托管，保障合规、合规数据隐私与 SLA
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Enterprise</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Azure+OpenAI+Service+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">44</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">cloud</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Cloudflare Workers AI</h3>
+<span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">云巨头与企业级</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+依托全球边缘计算网络，提供低延迟、轻量级的 AI 模型 API 托管
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Low Latency</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Cloudflare+Workers+AI+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">45</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">cloud</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">NVIDIA NIM</h3>
+<span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">云巨头与企业级</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+英伟达官方微服务架构，优化企业私有化硬件上的推理 API 性能
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Enterprise</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Inference</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=NVIDIA+NIM+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">46</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+<img alt="Hugging Face API" class="w-16 h-16 object-contain" src="images/nav-logo-HuggingFace.webp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<span class="material-symbols-outlined text-5xl text-white/90" style="display:none;">cloud</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Hugging Face API</h3>
+<span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">云巨头与企业级</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+基于全球最大开源社区，提供开箱即用的 Inference Providers API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Open Source</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Hugging+Face+API+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+<!-- 企业级/开源网关 Section -->
+<div class="mb-gutter mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">shield</span>
+<span class="font-label-sm uppercase tracking-widest text-label-sm text-primary-fixed-dim">Enterprise Gateway</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">企业级/开源网关</h2>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 67px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">47</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">LiteLLM Gateway</h3>
+<span class="bg-slate-500/10 text-slate-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">企业级/开源网关</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+业内最受欢迎的统一 OpenAI 格式代理网关，支持自建私有 API
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=LiteLLM+Gateway+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 72px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">48</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Portkey</h3>
+<span class="bg-slate-500/10 text-slate-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">企业级/开源网关</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于 LLM API 路由、可观测性（Observability）与成本监控
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API Gateway</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Portkey+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 77px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">49</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Helicone</h3>
+<span class="bg-slate-500/10 text-slate-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">企业级/开源网关</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专注于 LLM API 监控、缓存、Prompt 管理与分析的开发者平台
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">API</span><span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Developer</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Helicone+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 82px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">50</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">Kong AI Gateway</h3>
+<span class="bg-slate-500/10 text-slate-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">企业级/开源网关</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+传统 API 网关巨头的 AI 扩展包，适合企业集中管控大模型流量
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Enterprise</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=Kong+AI+Gateway+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+<div class="power-card rounded-xl p-stack-lg flex flex-col md:flex-row gap-gutter group relative overflow-hidden" style="--mouse-x: 582px; --mouse-y: 87px;">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-primary-fixed-dim/20 font-headline-xl text-6xl italic select-none">51</span>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-5xl text-white/90">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary-fixed-dim transition-colors">TrueFoundry</h3>
+<span class="bg-slate-500/10 text-slate-400 text-xs font-bold uppercase tracking-tighter px-2 py-1 rounded">企业级/开源网关</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-md">
+专为中大型企业打造的私有化 AI API Gateway 与 LLM Ops 平台
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 text-on-surface-variant px-3 py-1 rounded-full text-xs border border-white/5">Enterprise</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-2">
+<a href="https://www.google.com/search?q=TrueFoundry+API" target="_blank" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">View API <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<button class="border border-outline-variant text-on-surface-variant px-6 py-2 rounded-lg font-medium hover:bg-white/5 transition-colors">Documentation</button>
+</div>
+</div>
+
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-stack-lg flex justify-center">
+<button class="flex items-center gap-2 text-primary-fixed-dim font-bold hover:gap-4 transition-all py-3 px-8 rounded-full border border-primary-fixed-dim/20 bg-primary-fixed-dim/5">
+                Load More Providers <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/10 p-gutter flex justify-center mt-stack-lg">
+<div class="max-w-[1280px] w-full flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="flex flex-col gap-2">
+<span class="font-title-md text-title-md font-bold text-primary">AI NEXUS</span>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2024 AI NEXUS Directory. The definitive gateway to ML.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Advertise</a>
+</div>
+</div>
+</footer>
+<!-- Simple Hover & Interaction Script -->
+<script>
+        // Add subtle glow follow effect to cards
+        document.querySelectorAll('.power-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
