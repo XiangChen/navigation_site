@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: () => import('../views/HomePage.vue'),
-    meta: { title: 'AI NEXUS - Premium AI Tools Directory' }
+    meta: { title: 'AI NEXUS - The Definitive Gateway to ML' }
   },
   {
     path: '/ai-api',
@@ -24,11 +24,17 @@ const routes = [
     name: 'ToolDetail',
     component: () => import('../views/ToolDetailPage.vue'),
     meta: { title: 'Tool Details | AI NEXUS' }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/NotFoundPage.vue'),
+    meta: { title: 'Page Not Found | AI NEXUS' }
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

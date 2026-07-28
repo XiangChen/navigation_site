@@ -17,7 +17,7 @@
 
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 mb-8 text-sm text-on-surface-variant">
-          <router-link to="/" class="hover:text-primary transition-colors">Home</router-link>
+          <a href="/" class="hover:text-primary transition-colors">Home</a>
           <span class="material-symbols-outlined text-xs">chevron_right</span>
           <span class="text-primary-fixed-dim font-medium">AI API</span>
         </nav>
@@ -51,7 +51,8 @@
 </template>
 
 <script setup>
-import { AppHeader, AppFooter } from '../components/AppHeader.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/AppFooter.vue'
 import ApiToolCard from '../components/ApiToolCard.vue'
 import { apiToolsByCategory } from '../data/api.js'
 </script>

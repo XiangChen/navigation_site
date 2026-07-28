@@ -1,223 +1,114 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
     <AppHeader />
-    <main class="pt-24 pb-8">
-      <div class="max-w-[1280px] mx-auto px-gutter">
-        <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 mb-6 text-sm text-on-surface-variant">
-          <router-link to="/" class="hover:text-primary transition-colors">Home</router-link>
-          <span class="material-symbols-outlined text-xs">chevron_right</span>
-          <router-link 
-            v-if="tool" 
-            :to="`/category/${tool.category}`" 
-            class="hover:text-primary transition-colors"
-          >
-            {{ tool.categoryName }}
-          </router-link>
-          <span class="material-symbols-outlined text-xs">chevron_right</span>
-          <span class="text-primary-fixed-dim font-medium truncate">{{ tool?.name || 'Loading...' }}</span>
-        </nav>
+    
+    <main class="max-w-container-max mx-auto pt-24 px-4 md:px-gutter lg:px-margin-desktop pb-20">
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 mb-8 text-on-surface-variant font-label-sm text-label-sm">
+        <a href="/" class="hover:text-primary transition-colors">Home</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <a v-if="tool" :href="`/category/${tool.category}`" class="hover:text-primary transition-colors">{{ tool.categoryName }}</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <span class="text-on-surface">{{ tool?.name || 'Loading...' }}</span>
+      </nav>
 
-        <!-- Loading State -->
-        <div v-if="!tool" class="text-center py-16">
-          <div class="inline-block w-12 h-12 border-4 border-primary-fixed-dim border-t-transparent rounded-full animate-spin"></div>
-          <p class="text-on-surface-variant mt-4">Loading tool details...</p>
-        </div>
-
-        <!-- Tool Detail -->
-        <template v-else>
-          <!-- Header Section -->
-          <div class="flex items-start gap-6 mb-8">
-            <!-- Icon -->
-            <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center flex-shrink-0 overflow-hidden">
-              <img 
-                v-if="hasIcon" 
-                :src="`/images/${iconFilename}`" 
-                :alt="tool.name"
-                class="w-16 h-16 object-contain"
-                @error="imgError = true"
-              >
-              <span v-else class="material-symbols-outlined text-5xl text-white/90">{{ categoryIcon }}</span>
-            </div>
-            
-            <!-- Info -->
-            <div class="flex-1">
-              <h1 class="text-4xl font-bold text-on-surface mb-3">{{ tool.name }}</h1>
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">{{ tool.categoryName }}</span>
-                <span v-if="tool.level" class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium">
-                  {{ tool.level }}
-                </span>
-                <span v-if="tool.rating" class="flex items-center gap-1 text-amber-400 text-sm">
-                  <span class="material-symbols-outlined text-sm">star</span>
-                  {{ tool.rating }}
-                </span>
-              </div>
-              <p v-if="tool.slogan" class="text-lg text-on-surface-variant italic">{{ tool.slogan }}</p>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap gap-4 mb-8">
-            <a 
-              :href="getSearchUrl" 
-              target="_blank"
-              class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2"
-            >
-              Visit Website <span class="material-symbols-outlined text-sm">open_in_new</span>
-            </a>
-            <button 
-              v-if="tool.status"
-              class="border border-outline-variant text-on-surface-variant px-6 py-3 rounded-lg font-medium hover:bg-white/5 transition-colors flex items-center gap-2"
-            >
-              <span class="w-2 h-2 rounded-full" :class="statusColor"></span>
-              {{ tool.status }}
-            </button>
-          </div>
-
-          <!-- Tags -->
-          <div v-if="tool.tags" class="flex flex-wrap gap-2 mb-8">
-            <span 
-              v-for="tag in parseTags" 
-              :key="tag"
-              class="bg-surface-variant/50 text-on-surface-variant px-4 py-2 rounded-full text-sm border border-white/5"
-            >
-              {{ tag }}
-            </span>
-          </div>
-
-          <!-- Content Sections -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Main Content (2/3 width) -->
-            <div class="lg:col-span-2 space-y-8">
-              <!-- Description -->
-              <section v-if="tool.description" class="power-card rounded-xl p-6">
-                <h2 class="text-xl font-semibold text-on-surface mb-4">
-                  <span class="material-symbols-outlined text-primary-fixed-dim mr-2">info</span>
-                  Overview
-                </h2>
-                <p class="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{{ tool.description }}</p>
-              </section>
-
-              <!-- Target Audience -->
-              <section v-if="tool.targetAudience" class="power-card rounded-xl p-6">
-                <h2 class="text-xl font-semibold text-on-surface mb-4">
-                  <span class="material-symbols-outlined text-primary-fixed-dim mr-2">groups</span>
-                  Target Audience
-                </h2>
-                <p class="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{{ tool.targetAudience }}</p>
-              </section>
-
-              <!-- Main Features -->
-              <section v-if="tool.mainFeatures" class="power-card rounded-xl p-6">
-                <h2 class="text-xl font-semibold text-on-surface mb-4">
-                  <span class="material-symbols-outlined text-primary-fixed-dim mr-2">features</span>
-                  Main Features
-                </h2>
-                <ul class="space-y-3">
-                  <li 
-                    v-for="(feature, index) in parseList(tool.mainFeatures)" 
-                    :key="index"
-                    class="flex items-start gap-3 text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-primary-fixed-dim mt-0.5">check_circle</span>
-                    <span>{{ feature }}</span>
-                  </li>
-                </ul>
-              </section>
-
-              <!-- Highlights -->
-              <section v-if="tool.highlights" class="power-card rounded-xl p-6">
-                <h2 class="text-xl font-semibold text-on-surface mb-4">
-                  <span class="material-symbols-outlined text-primary-fixed-dim mr-2">star</span>
-                  Highlights
-                </h2>
-                <ul class="space-y-3">
-                  <li 
-                    v-for="(highlight, index) in parseList(tool.highlights)" 
-                    :key="index"
-                    class="flex items-start gap-3 text-on-surface-variant"
-                  >
-                    <span class="material-symbols-outlined text-amber-400 mt-0.5">auto_awesome</span>
-                    <span>{{ highlight }}</span>
-                  </li>
-                </ul>
-              </section>
-
-              <!-- Intro -->
-              <section v-if="tool.intro" class="power-card rounded-xl p-6">
-                <h2 class="text-xl font-semibold text-on-surface mb-4">
-                  <span class="material-symbols-outlined text-primary-fixed-dim mr-2">article</span>
-                  Introduction
-                </h2>
-                <p class="text-on-surface-variant leading-relaxed whitespace-pre-wrap">{{ tool.intro }}</p>
-              </section>
-            </div>
-
-            <!-- Sidebar (1/3 width) -->
-            <div class="space-y-6">
-              <!-- Info Card -->
-              <div class="power-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold text-on-surface mb-4">Quick Info</h3>
-                <div class="space-y-4">
-                  <div v-if="tool.monthlyTraffic" class="flex items-center justify-between">
-                    <span class="text-on-surface-variant">Monthly Traffic</span>
-                    <span class="font-medium text-on-surface">{{ tool.monthlyTraffic }}</span>
-                  </div>
-                  <div v-if="tool.rating" class="flex items-center justify-between">
-                    <span class="text-on-surface-variant">Rating</span>
-                    <span class="font-medium text-amber-400">⭐ {{ tool.rating }}</span>
-                  </div>
-                  <div v-if="tool.level" class="flex items-center justify-between">
-                    <span class="text-on-surface-variant">Level</span>
-                    <span class="font-medium text-on-surface">{{ tool.level }}</span>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-on-surface-variant">Category</span>
-                    <span class="font-medium text-primary-fixed-dim">{{ tool.categoryName }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Related Tools -->
-              <div v-if="relatedTools.length > 0" class="power-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold text-on-surface mb-4">Related Tools</h3>
-                <div class="space-y-2">
-                  <router-link 
-                    v-for="related in relatedTools" 
-                    :key="related.id"
-                    :to="`/${related.category}/${related.id}`"
-                    class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
-                  >
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center flex-shrink-0 overflow-hidden">
-                      <img 
-                        v-if="getIconFilename(related.icon)" 
-                        :src="`/images/${getIconFilename(related.icon)}`" 
-                        :alt="related.name"
-                        class="w-6 h-6 object-contain"
-                      >
-                      <span v-else class="material-symbols-outlined text-sm text-white">{{ categoryIcon }}</span>
-                    </div>
-                    <span class="text-sm text-on-surface group-hover:text-primary-fixed-dim truncate">{{ related.name }}</span>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </template>
-
-        <!-- Not Found -->
-        <div v-if="!found && !loading" class="text-center py-16">
-          <span class="material-symbols-outlined text-6xl text-on-surface-variant mb-4">error_outline</span>
-          <h2 class="text-2xl font-semibold text-on-surface mb-2">Tool Not Found</h2>
-          <p class="text-on-surface-variant mb-6">Sorry, we couldn't find the tool you're looking for.</p>
-          <router-link to="/" class="text-primary-fixed-dim hover:text-primary inline-flex items-center gap-2">
-            <span class="material-symbols-outlined">arrow_back</span>
-            Back to Home
-          </router-link>
-        </div>
+      <!-- Loading -->
+      <div v-if="!tool" class="text-center py-16">
+        <div class="inline-block w-12 h-12 border-4 border-primary-fixed-dim border-t-transparent rounded-full animate-spin"></div>
+        <p class="text-on-surface-variant mt-4">Loading tool details...</p>
       </div>
+
+      <!-- Tool Details -->
+      <template v-else>
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Left Column: Primary Details -->
+          <div class="w-full space-y-stack-lg">
+            <!-- Tool Header -->
+            <div class="glass-card rounded-xl p-8 flex flex-col items-center gap-8 relative overflow-hidden text-center">
+              <div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"></div>
+              <div class="relative z-10 w-full flex flex-col items-center gap-8">
+                <div class="flex flex-col items-center gap-6">
+                  <div class="w-24 h-24 shrink-0 bg-surface-container-high rounded-2xl flex items-center justify-center p-2 border border-white/10 shadow-2xl">
+                    <img 
+                      :alt="`${tool.name} Logo`" 
+                      :src="iconSrc" 
+                      class="w-full h-full rounded-xl object-contain"
+                      @error="onImgError"
+                    >
+                  </div>
+                  <div class="flex flex-col items-center gap-3">
+                    <h1 class="font-headline-xl text-headline-xl text-primary">{{ tool.name }}</h1>
+                    <span 
+                      v-if="tool.level" 
+                      class="bg-amber-500/20 text-amber-400 px-4 py-1 rounded-full text-label-sm font-label-sm border border-white/10 w-fit"
+                    >
+                      {{ tool.level }}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-6 mt-4 w-full max-w-2xl">
+                  <div class="flex flex-col md:flex-row items-stretch gap-4 w-full">
+                    <a 
+                      :href="officialUrl" 
+                      target="_blank"
+                      class="flex-1 inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-title-md text-title-md hover:scale-105 active:scale-95 transition-transform"
+                    >
+                      <span class="material-symbols-outlined">launch</span> Official Website
+                    </a>
+                    <div class="flex-[1.5] p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-between text-left">
+                      <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">sell</span>
+                        <div>
+                          <div class="text-primary font-bold text-body-md">优惠信息</div>
+                          <div class="text-on-surface-variant text-label-sm">新用户首月订阅享 20% 折扣</div>
+                        </div>
+                      </div>
+                      <button class="px-4 py-1.5 bg-primary text-on-primary rounded-full text-label-sm font-bold shrink-0">立即领取</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-6 text-left w-full">
+                  <p v-if="tool.description" class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed w-full">{{ tool.description }}</p>
+                  
+                  <div class="grid grid-cols-1 gap-8 pt-4">
+                    <!-- 需求人群定位 -->
+                    <section v-if="tool.targetAudience" class="w-full">
+                      <h3 class="text-primary font-title-md mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">groups</span> 需求人群定位
+                      </h3>
+                      <p class="text-on-surface-variant text-body-md leading-relaxed whitespace-pre-wrap">{{ tool.targetAudience }}</p>
+                    </section>
+
+                    <!-- 主要功能 -->
+                    <section v-if="tool.mainFeatures" class="w-full">
+                      <h3 class="text-primary font-title-md mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">features</span> 主要功能
+                      </h3>
+                      <ul class="text-on-surface-variant text-body-md list-disc list-inside space-y-2">
+                        <li v-for="(feature, index) in parseList(tool.mainFeatures)" :key="index" class="">{{ feature }}</li>
+                      </ul>
+                    </section>
+
+                    <!-- 产品特色 -->
+                    <section v-if="tool.highlights" class="w-full">
+                      <h3 class="text-primary font-title-md mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">star</span> 产品特色
+                      </h3>
+                      <ul class="text-on-surface-variant text-body-md list-disc list-inside space-y-2">
+                        <li v-for="(highlight, index) in parseList(tool.highlights)" :key="index" class="">{{ highlight }}</li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
     </main>
+    
     <AppFooter />
   </div>
 </template>
@@ -227,78 +118,47 @@ import { ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
-import { tools, categoryIcons } from '../data/tools.js'
+import { tools } from '../data/tools.js'
 
 const route = useRoute()
 const tool = ref(null)
-const loading = ref(true)
 const imgError = ref(false)
 
-const categoryIcon = computed(() => {
-  if (tool.value) {
-    return categoryIcons[tool.value.category] || 'smart_toy'
+const iconSrc = computed(() => {
+  if (!tool.value?.icon || imgError.value) {
+    return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="%2300f0ff"%3E%3Cpath d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/%3E%3C/svg%3E`
   }
-  return 'smart_toy'
+  const filename = tool.value.icon.split('/').pop()
+  return `/images/${filename}`
 })
 
-const hasIcon = computed(() => {
-  return tool.value?.icon && !imgError.value
-})
-
-const iconFilename = computed(() => {
-  if (!tool.value?.icon) return ''
-  return tool.value.icon.split('/').pop()
-})
-
-const found = computed(() => !!tool.value)
-
-const parseTags = computed(() => {
-  if (!tool.value?.tags) return []
-  return tool.value.tags.split(/[,，、]/).map(t => t.trim()).filter(Boolean)
-})
-
-const parseList = (text) => {
-  if (!text) return []
-  return text.split(/[,，、\n]/).map(t => t.trim()).filter(Boolean)
-}
-
-const statusColor = computed(() => {
-  const status = tool.value?.status?.toLowerCase() || ''
-  if (status.includes('free') || status.includes('active')) return 'bg-green-500'
-  if (status.includes('beta')) return 'bg-yellow-500'
-  if (status.includes('paid') || status.includes('premium')) return 'bg-purple-500'
-  return 'bg-gray-500'
-})
-
-const getSearchUrl = computed(() => {
+const officialUrl = computed(() => {
   if (!tool.value) return '#'
   const query = encodeURIComponent(tool.value.name)
   return `https://www.google.com/search?q=${query}`
 })
 
-const relatedTools = computed(() => {
-  if (!tool.value) return []
-  const sameCategory = tools.filter(
-    t => t.category === tool.value.category && t.id !== tool.value.id
-  )
-  return sameCategory.slice(0, 5)
-})
+const parseList = (text) => {
+  if (!text) return []
+  return text.split(/\n/).map(t => t.trim()).filter(Boolean)
+}
 
-const getIconFilename = (url) => {
-  if (!url) return ''
-  return url.split('/').pop()
+const onImgError = () => {
+  imgError.value = true
 }
 
 const loadTool = () => {
-  loading.value = true
   imgError.value = false
   const category = route.params.category
-  const id = route.params.id
+  let id = route.params.id
+  if (typeof id === 'string' && id.endsWith('.html')) {
+    id = id.slice(0, -5)
+  }
+  tool.value = tools.find(t => t.category === category && t.id === id)
   
-  tool.value = tools.find(
-    t => t.category === category && t.id === id
-  )
-  loading.value = false
+  if (tool.value) {
+    document.title = `AI NEXUS - ${tool.value.name} Details`
+  }
 }
 
 watch(

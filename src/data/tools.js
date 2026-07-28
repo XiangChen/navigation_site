@@ -60415,7 +60415,7 @@ export const categoryNames = {
 
 export const categoryIcons = {
   "writing": "edit_square",
-  "creative": "lightbulb",
+  "creative": "/images/nav-logo-adcreative.webp",
   "office": "work",
   "image": "image_search",
   "learning": "school",
