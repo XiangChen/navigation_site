@@ -1,83 +1,821 @@
 <!DOCTYPE html><html class="dark" lang="zh-CN" style=""><head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>AI NEXUS - 发现未来的AI工具</title>
-<meta name="description" content="AI NEXUS是一个AI工具导航网站，为你精选全球最优质的AI工具，涵盖写作、创意、办公、图形处理等多个领域。">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<title>AI NEXUS - The Definitive Gateway to ML</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface-variant": "#b9cacb",
+                "inverse-on-surface": "#233143",
+                "on-tertiary": "#2f303a",
+                "on-secondary-fixed-variant": "#74009f",
+                "outline-variant": "#3b494b",
+                "surface": "#051424",
+                "primary-container": "#00f0ff",
+                "surface-container": "#122131",
+                "on-tertiary-fixed": "#1a1b24",
+                "background": "#051424",
+                "error-container": "#93000a",
+                "on-primary-fixed": "#002022",
+                "tertiary-container": "#d9d8e6",
+                "primary-fixed": "#7df4ff",
+                "surface-container-lowest": "#010f1f",
+                "tertiary": "#f7f4ff",
+                "inverse-primary": "#006970",
+                "secondary-fixed-dim": "#ebb2ff",
+                "on-background": "#d4e4fa",
+                "tertiary-fixed-dim": "#c6c5d2",
+                "primary": "#dbfcff",
+                "secondary-fixed": "#f8d8ff",
+                "on-primary-container": "#006970",
+                "secondary": "#ebb2ff",
+                "outline": "#849495",
+                "on-tertiary-fixed-variant": "#454651",
+                "on-error-container": "#ffdad6",
+                "on-tertiary-container": "#5e5e69",
+                "error": "#ffb4ab",
+                "surface-tint": "#00dbe9",
+                "primary-fixed-dim": "#00dbe9",
+                "on-primary": "#00363a",
+                "on-surface": "#d4e4fa",
+                "surface-container-high": "#1c2b3c",
+                "surface-variant": "#273647",
+                "on-secondary-container": "#fff6fc",
+                "on-primary-fixed-variant": "#004f54",
+                "surface-container-low": "#0d1c2d",
+                "inverse-surface": "#d4e4fa",
+                "secondary-container": "#b600f8",
+                "on-secondary-fixed": "#320047",
+                "surface-dim": "#051424",
+                "tertiary-fixed": "#e3e1ef",
+                "on-secondary": "#520072",
+                "on-error": "#690005",
+                "surface-bright": "#2c3a4c",
+                "surface-container-highest": "#273647"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1280px",
+                "stack-lg": "32px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "margin-desktop": "48px",
+                "unit": "4px"
+            },
+            "fontFamily": {
+                "title-md": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Hanken Grotesk"],
+                "headline-xl": ["Hanken Grotesk"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Hanken Grotesk"],
+                "label-sm": ["Geist"],
+                "mono-code": ["Geist"]
+            },
+            "fontSize": {
+                "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "mono-code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
 <style>
-  body { font-family: 'Roboto', sans-serif; }
-  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-  .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-  .bg-surface-container-low { background-color: rgba(255,255,255,0.03); }
-  .text-primary-fixed-dim { color: #60a5fa; }
-  .text-on-surface-variant { color: rgba(255,255,255,0.6); }
-</style>
+        body { background-color: #051424; color: #d4e4fa; }
+        .glass-effect { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .category-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
+        .category-card:hover { transform: translateY(-4px); border-color: rgba(0, 240, 255, 0.3); box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1c2b3c; border-radius: 10px; }
+    </style>
 </head>
-<body class="bg-[#0a0a0a] text-white min-h-screen">
-
-<!-- Header -->
-<header class="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/5">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">hub</span>
-      <span class="text-xl font-bold text-primary-fixed-dim">AI NEXUS</span>
-    </div>
-    <nav class="hidden md:flex items-center gap-6">
-      <a href="#" class="text-sm font-medium hover:text-primary-fixed-dim transition-colors">BLOG</a>
-      <button class="bg-primary-fixed-dim hover:bg-blue-400 text-white px-4 py-1.5 rounded-full text-sm font-medium transition-colors">SUBMIT TOOL</button>
-      <a href="#" class="text-sm font-medium hover:text-primary-fixed-dim transition-colors">CONTACT US</a>
-    </nav>
-    <button class="md:hidden material-symbols-outlined text-white">menu</button>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="relative py-12 px-4 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-purple-900/20"></div>
-  <div class="relative max-w-7xl mx-auto">
-    <div class="flex items-center gap-3 mb-4">
-      <span class="bg-primary-fixed-dim/20 text-primary-fixed-dim px-3 py-1 rounded-full text-xs font-medium">EDITOR'S PICK</span>
-      <span class="text-sm text-on-surface-variant">精选AI工具推荐</span>
-    </div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">发现未来的AI工具</h1>
-    <p class="text-lg text-on-surface-variant mb-8 max-w-2xl">探索全球最顶尖的人工智能工具，从创意设计到办公效率，助力你的每一个创意。</p>
-    <button class="bg-primary-fixed-dim hover:bg-blue-400 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors">TRY NOW</button>
-  </div>
+<body class="font-body-md text-body-md overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-md border-b border-white/10 shadow-sm flex justify-between items-center px-gutter h-16"><div class="flex items-center justify-between w-full max-w-[1600px] mx-auto px-gutter"><div class="flex items-center flex-1"><span class="font-headline-lg text-headline-lg font-bold text-primary-fixed-dim tracking-tighter uppercase">AI NEXUS</span></div><div class="flex items-center gap-6"><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">BLOG</a><button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-sm text-label-sm font-bold uppercase tracking-wide">SUBMIT TOOL</button><a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">CONTACT US</a></div></div></header>
+<main class="pt-24 px-4 md:px-margin-desktop pb-20 max-w-[1440px] mx-auto w-full flex-grow">
+<!-- Hero Section (Full Width) -->
+<section class="mb-12">
+<div class="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden group border border-white/10 shadow-xl">
+<img alt="Hero AI Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjhbt2xdW2dBCW-RiLWD5lviNNuR6FRuR7mutVQJGCInznSYEIUYrNVTfhEjFbCSCmnxgi9hKB5l3bVv2CEHix-H1zrIeytpCcAVzsWgBs994du1YG2DwEm3rGYxtRk7UEIymezI-2gn0bxOsdUhhZR9vN5Ot2FS9cWRhwo0aQ61qDNcdt-FRpOuP-89BF3cDYWOF7wRL2Dxf3ImKQQL52exgC-TONnn3m1rXJZcbpPGhfqH1TsOcu9AJ5KB938n7jnok14SkU7g">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full md:w-2/3">
+<span class="bg-primary-container/20 text-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block backdrop-blur-md">Editor's Pick</span>
+<h1 class="font-headline-xl text-headline-xl text-white mb-2">Nexus Engine v4.0</h1>
+<p class="text-body-lg text-on-surface-variant mb-6">Discover the next frontier of digital storytelling with our curated directory.</p>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 bg-primary-container text-on-primary-container rounded-lg font-bold flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+                            Try Now <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+</div>
 </section>
-
-<!-- Category Grid -->
-<section class="py-12 px-4">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-2xl font-bold mb-8">AI工具分类排行榜</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-    </div>
-  </div>
+<!-- Category Matrix Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- 1. AI写作工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">edit_square</span>
+<h3 class="font-title-md text-white">AI写作工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Enhance your copy, fix grammar, and generate creative content with expert AI writers.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">秘塔写作猫</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">GPTZero</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">百度文库</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">笔墨写作</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">Gerwin AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">ReadPo</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">文赋Ai论文</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-fixed-dim/10 hover:bg-primary-fixed-dim text-primary-fixed-dim hover:text-on-primary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL WRITING TOOLS</button>
+</div>
+</div>
+<!-- 2. AI创意工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">sparkles</span>
+<h3 class="font-title-md text-white">AI创意工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Explore next-level AI generators for professional artists and creative minds.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Superstudio</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">元极AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">CatiMind</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Quick QR Art</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">海纳星火</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Extrapolate</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Hidden Door</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL CREATIVE TOOLS</button>
+</div>
+</div>
+<!-- 3. AI办公工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">work</span>
+<h3 class="font-title-md text-white">AI办公工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Revolutionize your work routine with intelligent productivity boosters.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">ChatExcel</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Copilot</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Bard PDF</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Qodo</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">AiBiao.cn</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Lightfield</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Gamma</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-container/10 hover:bg-primary-container text-primary-container hover:text-on-primary-container rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL OFFICE TOOLS</button>
+</div>
+</div>
+<!-- 4. AI图形处理排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">photo_filter</span>
+<h3 class="font-title-md text-white">AI图形处理排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Intelligent editing tools for enhancing, repairing, and transforming visual assets.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Lenso</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">像素蛋糕</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Picsart</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Shakker</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">ARTSMART AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">BeautyPlus</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Phot.AI</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-fixed/10 hover:bg-primary-fixed text-primary-fixed hover:text-on-primary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL IMAGE TOOLS</button>
+</div>
+</div>
+<!-- 5. AI视频工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">movie_creation</span>
+<h3 class="font-title-md text-white">AI视频工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Transform ideas into cinematic experiences with industry-leading video AI.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">LibTV</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Runway</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Happy Horse</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">剪映</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">OiiOii</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">可灵AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Medeo AI</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-error/10 hover:bg-error text-error hover:text-on-error rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL VIDEO TOOLS</button>
+</div>
+</div>
+<!-- 6. AI设计工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">design_services</span>
+<h3 class="font-title-md text-white">AI设计工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Streamline your UI/UX and branding workflows with AI-powered design assistants.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Tripo</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Photoshop</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Claude Design</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">LogoAI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">可画</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">稿定AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">QoQo</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-container/10 hover:bg-primary-container text-primary-container hover:text-on-primary-container rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL DESIGN TOOLS</button>
+</div>
+</div>
+<!-- 7. AI对话聊天排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">forum</span>
+<h3 class="font-title-md text-white">AI对话聊天排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Engage with world-class language models for knowledge, roleplay, and productivity.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">ChatGPT</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Gemini</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Deepseek</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">SPICYCHAT.AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">豆包AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Grok AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Claude</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-secondary-fixed-dim/10 hover:bg-secondary-fixed-dim text-secondary-fixed-dim hover:text-on-secondary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL CHAT TOOLS</button>
+</div>
+</div>
+<!-- 8. AI绘画工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h3 class="font-title-md text-white">AI绘画工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Elite text-to-image generators for professional artists and creative enthusiasts.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">ChatGPT Images 2.0</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">即梦AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Nano Banana Pro</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Midjourney</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">liblib AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Whisk</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Civitai</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL DRAWING TOOLS</button>
+</div>
+</div>
+<!-- 9. AI学习平台排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">school</span>
+<h3 class="font-title-md text-white">AI学习平台排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Master new skills and explore AI with comprehensive learning resources.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Duolingo</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">优设网</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Replicate</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Kaggle</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">WolframAlpha</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">ML For Beginners</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Curipod</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-tertiary-fixed-dim/10 hover:bg-tertiary-fixed-dim text-tertiary-fixed-dim hover:text-on-tertiary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL LEARNING TOOLS</button>
+</div>
+</div>
+<!-- 10. AI编程工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">code</span>
+<h3 class="font-title-md text-white">AI编程工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Accelerate development with AI-powered coding assistants and platforms.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Codex</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Google AI Studio</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Pencil</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">TRAE</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">Coze</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Google Antigravity</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Ollama</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-container/10 hover:bg-primary-container text-primary-container hover:text-on-primary-container rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL CODING TOOLS</button>
+</div>
+</div>
+<!-- 11. AI翻译工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">translate</span>
+<h3 class="font-title-md text-white">AI翻译工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Break language barriers with intelligent translation solutions.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">讯飞智能翻译</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">秘塔AI翻译</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">百度翻译</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">有道翻译</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">DeepL翻译</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">AI TransPDF</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-fixed transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">BabelDOC</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-fixed/10 hover:bg-primary-fixed text-primary-fixed hover:text-on-primary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL TRANSLATION TOOLS</button>
+</div>
+</div>
+<!-- 12. AI营销工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-title-md text-white">AI营销工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Boost your brand and campaigns with AI-powered marketing solutions.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">AI Consulting Tools</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">BrandWell</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Mnemonic AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">搜获客</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">阿里妈妈·创意中心</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">搜极星</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-secondary transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Salesforce AI</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-secondary/10 hover:bg-secondary text-secondary hover:text-on-secondary rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL MARKETING TOOLS</button>
+</div>
+</div>
+<!-- 13. AI音频工具排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<h3 class="font-title-md text-white">AI音频工具排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Create, edit, and enhance audio with cutting-edge AI technology.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">Udio</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">ElevenLabs</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Play.ht</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">RVC</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">Soundraw</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Descript</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-error transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Podcastle</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-error/10 hover:bg-error text-error hover:text-on-error rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL AUDIO TOOLS</button>
+</div>
+</div>
+<!-- 14. AI智能助手排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<h3 class="font-title-md text-white">AI智能助手排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Empower your daily tasks with intelligent AI assistants and agents.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">OpenClaw</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">Manus</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">WorkBuddy</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">Banana Prompts</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">SkillHub</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Weavy</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-tertiary-fixed-dim transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">Kimi Claw</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-tertiary-fixed-dim/10 hover:bg-tertiary-fixed-dim text-tertiary-fixed-dim hover:text-on-tertiary-fixed rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL ASSISTANTS</button>
+</div>
+</div>
+<!-- 15. AI工具箱排行榜 -->
+<div class="category-card bg-surface-container-low rounded-xl p-0 overflow-hidden flex flex-col h-[480px]">
+<div class="p-4 border-b border-white/5 flex items-center gap-3 bg-white/[0.02]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">box</span>
+<h3 class="font-title-md text-white">AI工具箱排行榜</h3>
+</div>
+<div class="p-4 flex-grow overflow-y-auto custom-scrollbar">
+<p class="text-xs text-on-surface-variant mb-4">Your gateway to the definitive directory of AI tools and platforms.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">1.</span>
+<span class="text-sm font-medium">优设AI导航</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">2.</span>
+<span class="text-sm font-medium">麦芽AI</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">3.</span>
+<span class="text-sm font-medium">Futurepedia</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">4.</span>
+<span class="text-sm font-medium">ModelScope</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">5.</span>
+<span class="text-sm font-medium">Hugging Face</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">6.</span>
+<span class="text-sm font-medium">Poe</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer hover:text-primary-container transition-colors">
+<span class="text-xs font-mono text-on-surface-variant w-4">7.</span>
+<span class="text-sm font-medium">ToolScout</span>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-white/5 bg-white/[0.01]">
+<button class="w-full py-2 bg-primary-container/10 hover:bg-primary-container text-primary-container hover:text-on-primary-container rounded text-xs font-bold transition-all uppercase tracking-wider">SEE ALL TOOLBOX</button>
+</div>
+</div>
 </section>
-
+</main>
 <!-- Footer -->
-<footer class="bg-[#0a0a0a] border-t border-white/5 py-8 mt-12">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary-fixed-dim">hub</span>
-        <span class="text-lg font-bold text-primary-fixed-dim">AI NEXUS</span>
-      </div>
-      <div class="text-sm text-on-surface-variant">
-        © 2024 AI NEXUS. All rights reserved.
-      </div>
-    </div>
-  </div>
+<footer class="w-full mt-auto bg-surface-container-lowest border-t border-white/10 flex flex-col md:flex-row justify-between items-center p-gutter gap-stack-md">
+<div>
+<span class="font-title-md text-title-md font-bold text-primary block mb-1">AI NEXUS</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 AI NEXUS Directory. The definitive gateway to ML.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Contact</a>
+</div>
 </footer>
-
+<!-- Mobile Navigation Shell -->
+<div class="md:hidden fixed bottom-0 w-full h-16 bg-surface-container-highest backdrop-blur-md border-t border-white/10 flex justify-around items-center px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] font-medium">Categories</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
 <script>
-  document.querySelectorAll('.category-card').forEach(card => {
-    card.addEventListener('mouseenter', () => card.style.border = '1px solid rgba(96, 165, 250, 0.3)');
-    card.addEventListener('mouseleave', () => card.style.border = 'none');
-  });
-</script>
-</body>
-</html>
+        window.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                document.querySelector('input[placeholder="Search models, APIs, and AI tools..."]').focus();
+            }
+        });
+    </script>
+</body></html>
