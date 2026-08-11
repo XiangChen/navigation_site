@@ -48,25 +48,13 @@
                 </div>
 
                 <div class="flex flex-col items-center gap-6 mt-4 w-full max-w-2xl">
-                  <div class="flex flex-col md:flex-row items-stretch gap-4 w-full">
-                    <a 
-                      :href="officialUrl" 
-                      target="_blank"
-                      class="flex-1 inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-title-md text-title-md hover:scale-105 active:scale-95 transition-transform"
-                    >
-                      <span class="material-symbols-outlined">launch</span> Official Website
-                    </a>
-                    <div class="flex-[1.5] p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-between text-left">
-                      <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary">sell</span>
-                        <div>
-                          <div class="text-primary font-bold text-body-md">优惠信息</div>
-                          <div class="text-on-surface-variant text-label-sm">新用户首月订阅享 20% 折扣</div>
-                        </div>
-                      </div>
-                      <button class="px-4 py-1.5 bg-primary text-on-primary rounded-full text-label-sm font-bold shrink-0">立即领取</button>
-                    </div>
-                  </div>
+                  <a
+                    :href="officialUrl"
+                    target="_blank"
+                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container px-10 py-3 rounded-xl font-title-md text-title-md hover:scale-105 active:scale-95 transition-transform"
+                  >
+                    <span class="material-symbols-outlined">launch</span> Official Website
+                  </a>
                 </div>
 
                 <div class="space-y-6 text-left w-full">
@@ -119,6 +107,7 @@ import { useRoute } from 'vue-router'
 import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import { tools } from '../data/tools.js'
+import { toolUrls } from '../data/tool_urls.js'
 
 const route = useRoute()
 const tool = ref(null)
@@ -134,6 +123,9 @@ const iconSrc = computed(() => {
 
 const officialUrl = computed(() => {
   if (!tool.value) return '#'
+  const key = tool.value.name.toLowerCase().trim()
+  const url = toolUrls[key]
+  if (url) return url
   const query = encodeURIComponent(tool.value.name)
   return `https://www.google.com/search?q=${query}`
 })
