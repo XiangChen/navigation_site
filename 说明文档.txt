@@ -1,0 +1,271 @@
+================================================================================
+                    AI NEXUS 导航站 — 项目使用说明
+================================================================================
+
+一、项目简介
+--------------------------------------------------------------------------------
+本项目是一个 AI 工具导航网站（品牌名 AI NEXUS），收录了 1717 个 AI 工具 +
+51 个 AI API，按 15 个大类分类展示。点击工具卡片可进入详情页查看介绍，
+再通过 "Official Website" 按钮跳转到对应的官方网站。
+
+技术栈：
+  - Vue 3 + Vue Router 4（前端框架 & 路由）
+  - Vite 5（构建工具 & 开发服务器）
+  - Tailwind CSS 3（UI 样式框架）
+  - PostCSS + Autoprefixer（CSS 预处理）
+
+================================================================================
+二、解压后如何运行（详细步骤）
+================================================================================
+
+【前置条件】
+请确认电脑上已安装以下软件：
+  1. Node.js（版本 >= 18，建议 18.x LTS）
+     - 下载地址：https://nodejs.org/
+     - 验证安装：打开命令行，输入 "node -v" 和 "npm -v"
+       能看到版本号（如 v18.20.x、10.x.x）即为安装成功。
+
+【步骤一：进入项目目录】
+  1. 把压缩包解压到任意位置（例如 D:\navigation_site）
+  2. 打开命令行（Windows: Win+R 输入 cmd 或 PowerShell）
+  3. 进入解压后的目录：
+       cd D:\navigation_site
+
+【步骤二：安装依赖】
+  在项目目录下执行：
+       npm install
+     或 npm i
+  说明：
+  - 第一次执行会下载 node_modules（约几百 MB），需要联网，请耐心等待。
+  - 如果下载速度慢，可切换到淘宝镜像：
+       npm config set registry https://registry.npmmirror.com
+    再重新执行 npm install。
+  - 依赖安装完成后，会生成 / 或更新 node_modules 文件夹。
+
+【步骤三：启动开发服务器（预览网页）】
+  执行：
+       npm run dev
+  看到类似如下输出就说明启动成功：
+       VITE v5.x.x  ready in XXX ms
+       -> Local:   http://localhost:5180/
+  默认会自动打开浏览器，无需手动输入地址。
+  （本项目在 vite.config.js 里固定了端口 5180，不自动退让冲突；
+   如果 5180 被占用，会直接报错，手动改 --port 即可。）
+
+  ★ 路由访问规则（直接在浏览器输入即可访问对应页面）
+
+  基础路径（以下以 http://localhost:5180/ 为例，部署后替换为真实域名即可）：
+
+    首页
+        http://localhost:5180/
+        http://localhost:5180/index.html
+
+    AI API 汇总页
+        http://localhost:5180/ai-api
+
+    【分类工具列表页】路径规则：/category/<分类英文key>
+        15 个分类的直接访问地址：
+          AI写作工具      ->  http://localhost:5180/category/writing
+          AI创意工具      ->  http://localhost:5180/category/creative
+          AI办公工具      ->  http://localhost:5180/category/office
+          AI图形处理      ->  http://localhost:5180/category/image
+          AI学习平台      ->  http://localhost:5180/category/learning
+          AI对话聊天      ->  http://localhost:5180/category/chat
+          AI工具箱        ->  http://localhost:5180/category/toolbox
+          AI智能助手      ->  http://localhost:5180/category/assistant
+          AI绘画工具      ->  http://localhost:5180/category/drawing
+          AI编程工具      ->  http://localhost:5180/category/coding
+          AI翻译工具      ->  http://localhost:5180/category/translation
+          AI营销工具      ->  http://localhost:5180/category/marketing
+          AI视频工具      ->  http://localhost:5180/category/video
+          AI设计工具      ->  http://localhost:5180/category/design
+          AI音频工具      ->  http://localhost:5180/category/audio
+
+    【工具详情页】路径规则：/<分类英文key>/<工具id>
+        （工具详情页可以通过分类页点击卡片进入，也可以直接拼 URL 访问。
+         工具 id 是 tools.js 中每个工具对象的 "id" 字段，区分大小写。）
+        各分类示例工具（演示直接拼 URL 的格式）：
+          写作类 - Aithor                ->  http://localhost:5180/writing/aithor
+          创意类 - StoryTribe            ->  http://localhost:5180/creative/storytribe
+          办公类 - Prezi                 ->  http://localhost:5180/office/prezi
+          图形类 - ImageGood             ->  http://localhost:5180/image/imagegood
+          学习类 - Apex Vision AI        ->  http://localhost:5180/learning/apex-vision-ai
+          对话类 - Dream Machine AI      ->  http://localhost:5180/chat/dream-machine-ai
+          工具箱 - Mimo                  ->  http://localhost:5180/toolbox/mimo
+          助手类 - Vylo                  ->  http://localhost:5180/assistant/vylo
+          绘画类 - Neural4D              ->  http://localhost:5180/drawing/neural4d
+          编程类 - vly                   ->  http://localhost:5180/coding/vly
+          翻译类 - 百度翻译              ->  http://localhost:5180/translation/百度翻译
+          营销类 - Gojiberry AI          ->  http://localhost:5180/marketing/gojiberry-ai
+          视频类 - img2video.ai          ->  http://localhost:5180/video/img2video.ai
+          设计类 - RoboNeo               ->  http://localhost:5180/design/roboneo
+          音频类 - Speechify             ->  http://localhost:5180/audio/speechify
+
+    404 页面（任意不存在的路径都会落到这里）
+        http://localhost:5180/this-page-does-not-exist
+
+  常用参数：
+  - 修改端口：npm run dev -- --port 8080
+  - 局域网可访问：npm run dev -- --host 0.0.0.0
+
+  停止开发服务器：在命令行按 Ctrl + C。
+
+【步骤四（可选）：打包成生产环境静态文件】
+  执行：
+       npm run build
+  打包完成后会生成 dist/ 目录，里面就是纯静态的 HTML/CSS/JS/图片文件。
+  可把 dist/ 整个放到 Nginx、Apache 或任意静态文件服务器上部署。
+
+【步骤五（可选）：本地预览打包结果】
+  在 build 之后执行：
+       npm run preview
+  默认会在 http://localhost:4173/ 启动预览，用于验证生产构建是否正常。
+
+================================================================================
+三、目录结构 & 文件说明
+================================================================================
+
+navigation_site/                          ← 项目根目录
+├── aixzd/                                ← 原始数据源（15 个 CSV 文件）
+│   ├── AI写作工具.csv                     │ 写作类工具原始信息（从外部导航站导出）
+│   ├── AI创意工具.csv                     │ 创意类工具
+│   ├── AI办公工具.csv                     │ 办公类工具
+│   ├── AI图形处理.csv                     │ 图像处理类工具
+│   ├── AI学习平台.csv                     │ 学习教育类工具
+│   ├── AI对话聊天.csv                     │ 对话聊天类工具
+│   ├── AI工具箱.csv                       │ 综合工具箱类
+│   ├── AI智能助手.csv                     │ AI 助手/Agent 类
+│   ├── AI绘画工具.csv                     │ 文生图/绘画类工具
+│   ├── AI编程工具.csv                     │ 编程开发类工具
+│   ├── AI翻译工具.csv                     │ 翻译类工具
+│   ├── AI营销工具.csv                     │ 营销增长类工具
+│   ├── AI视频工具.csv                     │ 视频生成/编辑类工具
+│   ├── AI设计工具.csv                     │ 设计类工具
+│   ├── AI音频工具.csv                     │ 音频音乐类工具
+│   └── getlink.py                         │ 【脚本】从 aixzd 压缩包批量提取 CSV
+│
+├── public/                               ← 静态资源（Vite 打包时原样复制）
+│   └── images/                            ← 图片资源
+│       ├── hero-banner.svg                │   首页顶部的 Hero 大图（本地 SVG）
+│       ├── nav-logo-*.webp                │   各工具的 Logo 图片（几百个）
+│       ├── nav-logo-*.jpg                 │   部分工具 Logo（jpg 格式）
+│       └── anishort-1.webp 等             │   其他装饰图/示例图
+│
+├── src/                                  ← 源代码目录（核心）
+│   ├── components/                         ← Vue 可复用组件
+│   │   ├── AppHeader.vue                   │   顶部导航栏组件（Logo、菜单）
+│   │   ├── AppFooter.vue                   │   页脚组件（版权、链接）
+│   │   ├── CategoryCard.vue                │   首页的分类卡片组件
+│   │   ├── ToolCard.vue                    │   普通工具卡片组件
+│   │   └── ApiToolCard.vue                 │   AI API 页面专用卡片组件
+│   │
+│   ├── data/                               ← 数据文件
+│   │   ├── tools.js                        │   【核心】1717 个工具的详细信息
+│   │   │                                    │   （name/slogan/description/category/
+│   │   │                                    │   tags/intro/targetAudience/mainFeatures/
+│   │   │                                    │   highlights/status/categoryName 等）
+│   │   ├── api.js                          │   51 个 AI API 工具的数据
+│   │   └── tool_urls.js                    │   工具名称 -> 官网 URL 映射（1706 条）
+│   │                                         （给详情页 Official Website 按钮用）
+│   │
+│   ├── router/                             ← 路由配置
+│   │   └── index.js                        │   定义 5 个路由（Vue Router history 模式）：
+│   │                                         │   /                    -> 首页
+│   │                                         │   /ai-api              -> AI API 页
+│   │                                         │   /category/:categoryKey -> 分类详情页
+│   │                                         │   /:category/:id        -> 工具详情页
+│   │                                         │   /*（其余所有路径）    -> 404 页面
+│   │                                         │   附带路由切换后自动滚动到顶部、
+│   │                                         │   自动更新 document.title 的守卫。
+│   │
+│   ├── views/                              ← 页面级组件
+│   │   ├── HomePage.vue                    │   首页：Hero + 15 个分类入口卡片
+│   │   ├── CategoryPage.vue                │   分类页：展示该分类下所有工具卡片
+│   │   ├── ToolDetailPage.vue              │   工具详情页：介绍 + Official Website
+│   │   ├── AiApiPage.vue                   │   AI API 专属页
+│   │   └── NotFoundPage.vue                │   404 页面
+│   │
+│   ├── App.vue                             ← Vue 根组件（包裹页面 + 全局样式）
+│   ├── main.js                             ← 应用入口（挂载 Vue、初始化路由）
+│   └── style.css                           ← 全局样式 + Tailwind 指令
+│
+├── index.html                              ← 首页静态入口（Vite 多入口之一，
+│                                              访问 / 时直接返回此文件；静态预览用）
+├── app.html                                ← Vue SPA 入口（Vite 多入口之二，
+│                                              访问 /category/*、/:cat/* 等路由时，
+│                                              由 spa-fallback 中间件改写到此文件，
+│                                              Vite 在此注入 Vue 应用和路由）
+├── ai_api.html                             ← AI API 页静态入口（旧版静态页，
+│                                              路由 /ai-api 匹配时经 Vue 组件渲染，
+│                                              此文件仅作为备用静态页存在）
+│
+├── package.json                            ← 【关键】项目依赖 & 脚本配置
+│                                              （dev/build/preview 三条 npm 命令）
+├── package-lock.json                       ← 依赖版本锁定（保证不同机器装出
+│                                              相同版本的依赖，不要手动修改）
+│
+├── vite.config.js                          ← Vite 构建配置
+│                                              关键项：
+│                                              - 开发端口固定 5180，strictPort=true，
+│                                                open=true 自动开浏览器
+│                                              - 自定义 spa-fallback 中间件：
+│                                                动态路由自动重写到 app.html
+│                                              - build 为多入口：index.html + app.html
+│                                                输出到 dist/
+├── tailwind.config.js                      ← Tailwind CSS 配置（Material 风格主题色
+│                                              配色、自定义间距、字体家族、字号）
+├── postcss.config.js                       ← PostCSS 配置（加载 Tailwind + Autoprefixer）
+│
+├── generate_data.py                        ← 【脚本】从 Excel 生成 tools.js/api.js
+│                                              （需要 Python 运行，更新数据源时用）
+├── .gitignore                              ← Git 忽略规则（node_modules/dist/等）
+├── aixzd(1).zip                            ← aixzd 原始数据压缩包（备份）
+└── 说明文档.txt                             ← 你现在正在看的这个文件
+
+================================================================================
+四、常见问题 FAQ
+================================================================================
+
+Q1: npm install 卡住了 / 报错 "ETIMEDOUT"？
+A: 是网络问题，切换到淘宝镜像：
+       npm config set registry https://registry.npmmirror.com
+    再重新 npm install。
+
+Q2: 打开浏览器显示白屏？
+A: 通常是依赖未安装完整，先 npm install；或者看浏览器 F12 控制台报错。
+
+Q3: 工具详情页的 Official Website 点了跳 Google 搜索？
+A: 说明该工具在 tool_urls.js 里暂无官网映射，可以去
+    src/data/tool_urls.js 里添加一行映射（格式见文件内部注释）。
+
+Q4: 想新增/修改工具数据？
+A: 改 src/data/tools.js（工具详情）或 src/data/tool_urls.js（官网 URL）。
+   或准备好 Excel 后，运行 generate_data.py 重新生成这两个数据文件。
+
+Q5: 要部署到服务器怎么操作？
+A: 执行 npm run build 得到 dist/ 目录，把 dist 下所有文件上传到
+   服务器静态根目录即可（例如 Nginx 的 /usr/share/nginx/html）。
+
+Q6: 可以删除哪些文件减少压缩包体积？
+A: 可安全删除以下文件/目录（运行时不依赖，仅开发/备份用途）：
+   - aixzd/ 及 aixzd(1).zip（仅做数据溯源，运行时读的是 src/data/*.js）
+   - generate_data.py（仅生成数据用）
+   - node_modules/（运行前 npm install 会自动重建，但要留 package.json）
+   - dist/（如果之前 build 过）
+   - .git/ 和 .gitignore（如无需版本管理）
+
+================================================================================
+五、快速启动速查表
+================================================================================
+
+  操作                      命令
+  -----------------------   -------------------------------------------
+  安装依赖                   npm install   （第一次必做）
+  启动开发服务器              npm run dev   （默认 http://localhost:5180/，自动开浏览器）
+  指定端口启动               npm run dev -- --port 8080
+  打包生产版本               npm run build -> 输出到 dist/
+  预览打包结果               npm run preview
+  切换到国内镜像             npm config set registry https://registry.npmmirror.com
+  切回官方镜像               npm config set registry https://registry.npmjs.org/
+
+================================================================================
